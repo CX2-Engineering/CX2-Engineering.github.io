@@ -1,0 +1,170 @@
+* {
+  font-family: "JetBrains Mono", monospace;
+  color: white;
+  /* background: red; */
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  color: var(--color-text);
+  /* background-color: var(--color-bg); */
+  background: #081825;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 300;
+  font-optical-sizing: auto;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent overflow */
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden; /* Disable scrolling on mobile */
+  }
+  h1 {
+    font-size: 30pt; /* Adjust font size for iPhones */
+  }
+
+  .p5Canvas {
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+}
+
+.p5Canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Ensure it is above the map */
+}
+
+#canvas-container {
+  display: hidden;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  #map {
+    height: 100vh; /* Constrain height to viewport height on mobile */
+    width: 100vw; /* Ensure it takes the full width */
+  }
+}
+
+.hero-content {
+  position: relative; /* Change to relative for stacking */
+  z-index: 3; /* Bring content above the map */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; /* Center the content */
+  padding: 60px;
+  padding-top: 15%;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.33);
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: 0.3s ease;
+  position: fixed;
+  top: 60px;
+  right: 60px;
+  z-index: 1000;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 60pt;
+  line-height: 1;
+  margin: none;
+  margin-left: -10px;
+}
+
+.logo {
+  z-index: 1000;
+  position: fixed;
+  margin-top: 60px;
+  margin-left: 60px;
+  width: 60px;
+}
+
+/* Hide Mapbox logo and footer elements */
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  /* iPad */
+  .hero-content {
+    padding: 30px;
+    padding-top: 120px;
+  }
+
+  .logo {
+    z-index: 1000;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 60px;
+  }
+
+  .button {
+    top: 30px;
+    right: 30px;
+  }
+
+  h1 {
+    font-size: 40pt; /* Adjust font size for iPad */
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30pt; /* Adjust font size for iPhones */
+  }
+
+  .p5Canvas {
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+  }
+}

@@ -1,6 +1,235 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Secure Spectrum Dominance</h1>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Document</title>
+
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <img class="logo" src="assets/cx2-logo.svg" alt="Cx2 Logo" />
+    <a class="button" href="https://jobs.lever.co/cx2">Careers</a>
+    <main>
+      <div id="canvas-container"></div>
+
+      <div id="map"></div>
+
+      <div class="hero-content">
+        <h1>Delivering Spectrum Dominance</h1>
+        <section class="content">
+          <h2 class="content__title">Status Flow</h2>
+          <ul class="list list--box">
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Active</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >49.9935, 36.2304</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-06-26 00:00:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >6</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Disabled</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2.0456, 45.3481</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-06-27 12:30:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >7</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Detected</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >32.4279, 53.6880</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-06-28 08:15:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >5</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Interference</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >15.5522, 44.2075</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-06-29 14:45:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >6</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Inactive</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >31.1668, 48.5164</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-06-30 09:00:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >5</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Active</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >14.5520, 46.9990</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-07-01 18:30:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >8</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Disabled</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >36.8219, 10.1652</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-07-02 11:15:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >4</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Detected</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >12.6392, 45.1234</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-07-03 07:45:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >6</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Interference</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >14.7350, 42.9990</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-07-04 15:00:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >5</span
+              >
+            </li>
+            <li class="list__item">
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >Inactive</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >13.1234, 45.6789</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >2024-07-05 20:30:00</span
+              >
+              <span
+                class="list__item-col hover-effect hover-effect--cursor-square"
+                >7</span
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <!-- JavaScript dependencies -->
+    <!-- GSAP library -->
+    <script src="js/gsap.min.js"></script>
+
+    <!-- SplitType for text manipulation: https://github.com/lukePeavey/SplitType -->
+    <script src="js/split-type.min.js"></script>
+
+    <!-- Scripts for the effect -->
+    <script type="module" src="js/effect-1/index.js"></script>
+
+    <script src="scripts.js"></script>
+    <script src="mapbox.js"></script>
+  </body>
 </html>
